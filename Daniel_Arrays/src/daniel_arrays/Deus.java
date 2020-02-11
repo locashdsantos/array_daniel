@@ -1,34 +1,38 @@
-
 package daniel_arrays;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
 public class Deus {
 
-    public List<Pessoas> remove(String nome, List<Pessoas> pessoas){
+    public void valida(String nome, List<Pessoas> pessoas) {
+
+    for(Pessoas pessoasAux : pessoas){
         
-        List<Pessoas> listaux = new ArrayList<>();
+    if(nome.equals(pessoasAux.getNome())){
         
-        for(Pessoas listaPessoas : pessoas){
-            
-            
-                    
-            if(nome.equals(listaPessoas.getNome())){
-                
-                pessoas.remove(listaPessoas);
-                listaux = pessoas;
-                
-            }else{
-            
-                listaux = pessoas;
-                
-            }
-            
-        }
-        return listaux;
+        System.out.println("Nome econtrado, enviando para remoção!");
+        remove(pessoasAux, pessoas);
+    }    
         
     }
-              
+    
+    }
+
+    public void remove(Pessoas pessoa, List<Pessoas> pessoas) {
+    
+        pessoas.remove(pessoa);
+        
+        System.out.println("A Lista ficou dessa forma");
+        
+        for(Pessoas listaPessoas : pessoas){
+        
+            System.out.println(" Nome: " + listaPessoas.getNome()
+            + " Idade: " + listaPessoas.getIdade() + 
+                    " Cargo: " + listaPessoas.getCargo());
+                       
+        }     
+        
+    }
+    
+    
 }

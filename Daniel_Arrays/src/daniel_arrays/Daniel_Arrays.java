@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 
 public class Daniel_Arrays{
-    
 
 
     public static void main(String[] args) {        
@@ -21,7 +20,7 @@ public class Daniel_Arrays{
         p.add(p1);
         Pessoas p2 = new Pessoas(30, "Criss", "Gerente");
         p.add(p2);   
-        
+               
         for(Pessoas listaPessoas : p){
         
             System.out.println(" Nome: " + listaPessoas.getNome()
@@ -29,12 +28,27 @@ public class Daniel_Arrays{
                     " Cargo: " + listaPessoas.getCargo());
                        
         } 
-        System.out.println("Gostaria de removeer alguém da lista?\n");        
-        String nome = r.nextLine();
         
+        System.out.println("Você quer retirar uma pessoa da lista?");
+        String resp = r.nextLine();    
+        if("s".equals(resp)){
+        
+           System.out.println("Quem gostaria de remover?");
+           String nomeRemover = r.nextLine();
+           Deus d = new Deus();
+           d.valida(nomeRemover, p);
+           
+        }else{
+            
+            System.out.println("A lista continua a mesma!"); 
+            
+        }
+        
+        
+      /**  
         Deus d = new Deus();
         
-        List<Pessoas> listaNova =  d.remove(nome, p);
+        Deus.remove();
         
         for(Pessoas listaPessoas : listaNova){
         
@@ -46,5 +60,6 @@ public class Daniel_Arrays{
         
         
     }
-    
+    **/
+    }
 }
